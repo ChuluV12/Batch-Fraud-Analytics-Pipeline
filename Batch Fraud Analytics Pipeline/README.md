@@ -1,14 +1,14 @@
-💳 Batch Fraud Analytics Pipeline
+Batch Fraud Analytics Pipeline
 An end-to-end AWS data engineering project that processes 300,000 synthetic credit card transactions to detect fraud patterns using a batch ETL architecture.
 
 ArchitectureCostDashboard
 
-🎯 Project Overview
+Project Overview
 This pipeline ingests raw transaction data, cleans and enriches it using PySpark (AWS Glue), runs SQL-based fraud detection logic (Amazon Athena), and visualizes high-risk users in an interactive dashboard.
 
 Live Dashboard: View Dashboard (Replace with your link)
 
-🏗️ Architecture
+Architecture
 Synthetic Data (Colab) → S3 (Raw/CSV)
 ↓
 AWS Glue Crawler
@@ -22,28 +22,28 @@ Amazon Athena (SQL)
 Interactive Dashboard (Plotly)
 
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Storage**: Amazon S3 (Raw & Processed buckets)
 - **Compute**: AWS Glue (PySpark ETL, Crawlers)
 - **Analytics**: Amazon Athena (Standard SQL)
 - **Visualization**: Plotly (Python)
 - **Data Format**: Parquet with Snappy compression
 
-## 🚀 Key Features
+## Key Features
 1.  **Data Generation**: 300,000 transactions with 1.5% synthetic fraud rate across 4 fraud types (High Amount, Foreign, Card Not Present, Rapid Succession).
 2.  **ETL Pipeline**: Automated type casting, null handling, and column enrichment (e.g., `amount_bucket`, `is_foreign_txn`).
 3.  **Cost Optimization**: Configured for minimum resource usage (Glue G.1X, 2 workers) keeping total run cost under $1.00.
 4.  **Fraud Logic**: Complex SQL window functions to detect rapid succession and user risk scoring.
 5.  **Partitioning**: Data is partitioned by `year` and `month` to optimize Athena query performance and cost.
 
-## 📊 Dashboard Insights
+## Dashboard Insights
 The dashboard highlights:
 - **KPIs**: Total fraud flags, fraud rate, and total fraud amount.
 - **Breakdown**: Fraud distribution by type (Pie Chart) and country (Bar Chart).
 - **Trends**: Daily fraud volume over time.
 - **Leaderboard**: Top 20 high-risk users ranked by a weighted risk score.
 
-## 📂 Repository Structure
+## Repository Structure
 ```bash
 .
 ├── athena_queries/       # SQL scripts for fraud detection
@@ -53,7 +53,7 @@ The dashboard highlights:
 ├── .gitignore            # Prevents upload of sensitive data
 └── README.md
 
-🔧 Setup Instructions
+Setup Instructions
 Prerequisites
 AWS Account with appropriate Glue/S3/Athena permissions.
 Python 3.x environment (or Google Colab).
@@ -84,11 +84,11 @@ Re-open the Colab notebook and run the "Phase 5" cells.
 Download the generated dashboard.html.
 Place it in the docs/ folder of this repo.
 Enable GitHub Pages on the main branch /docs folder.
-💰 Estimated Cost
+Estimated Cost
 S3 Storage: ~$0.00
 Glue Crawler: $0.00
 Glue ETL Job: ~$0.44 (one run)
 Athena Queries: ~$0.01
 Total: <$0.50
-👤 Author
+Author
 Chulumanco Vumazonke
